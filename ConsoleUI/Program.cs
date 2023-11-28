@@ -8,7 +8,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {   //DTO ---Data Transformation Object
-            ProductTest();
+            //ProductTest();
             //IoC
             //CategoryTest();
         }
@@ -26,7 +26,7 @@ namespace ConsoleUI
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetProductDetails())
+            foreach (var product in productManager.GetProductDetails().Data)
             {
                 Console.WriteLine(product.ProductName + "/" + product.CategoryName);
             }
